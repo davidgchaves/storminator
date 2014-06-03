@@ -7,17 +7,21 @@ define([
 
   var Router = Backbone.Router.extend({
     routes: {
-      '':      'goToDash',
-      'dash':  'goToDash',
-      'about': 'goToAbout'
+      '':            'goToDash',
+      'dash':        'goToDash',
+      'dash/:place': 'goToDash',
+      'about':       'goToAbout'
     },
 
     initialize: function (view) {
       this.appView = view;
     },
 
-    goToDash: function () {
+    goToDash: function (place) {
       this.appView.setPage('dash');
+      if (place) {
+        alert('Weather detail for ' + place);
+      }
     },
 
     goToAbout: function () {
