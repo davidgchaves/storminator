@@ -40,6 +40,11 @@ define([
       this.$el.append(this.html);
       this.$('#content').append(this.views['dash'].render().el);
       this.$('#content').append(this.views['about'].render().el);
+    },
+
+    setPage: function (page) {
+      this.$('.page-view').hide();
+      this.$('#page-' + page).show();
     }
   });
   
