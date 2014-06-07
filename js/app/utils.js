@@ -2,7 +2,7 @@ define([], function () {
   'use strict';
 
   var isNotANumber = function (x) {
-    return typeof x != 'number'
+    return (isNaN(parseFloat(x)) || !isFinite(x));
   };
 
   var produceFarenheit = function (celsius) {
